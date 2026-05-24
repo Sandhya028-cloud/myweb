@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Git Checkout') {
+            steps {
+                git 'https://github.com/Sandhya028-cloud/myweb.git'
+            }
+        }
+        stage('Maven Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('Docker Build') { 
+            steps { 
+              sh 'docker build -t s-java-image-$BUILD_NUMBER .'
+            } 
+        }
+        stage('Docker Push') {
+            steps {
+              sh 'docker tag s-java-image-$BUILD_NUMBER sandhyakadam/s-java-image-$BUILD_NUMBER; docker push sandhyakadam/s-java-image-$BUILD_NUMBER'
+            }
+        }
+        stage('Update Deployment File with new image') {
+            steps {
+              sh "sed -i 's|sandhyakadam/s-java-image-10|sandhyakadam/s-java-image-$BUILD_NUMBER|g' deployments.yml"
+            }
+        }
+        stage('Deploy in K8s') { 
+            steps { 
+              sh 'kubectl apply -f deployments.yml' 
+           } 
+       } 
+    }
+}
