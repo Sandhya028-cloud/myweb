@@ -99,7 +99,25 @@
       font-size: 35px;
       text-align: center;
     }
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 350px;
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 14px;
+}
 
+form input[type="submit"] {
+    background-color: #2e3550;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+} 
     .footer {
       padding: 55px 20px;
       background-color: #2e3550;
