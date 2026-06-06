@@ -30,7 +30,7 @@
     .header h1 {
       color: #222222;
       font-size: 30px;
-      font-family: 'Pacifico', cursive;
+      font-family: Arial, sans-serif;
     }
 
     .header .social a {
