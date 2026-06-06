@@ -156,11 +156,16 @@
         <tr>
       </table>
       <form>
-        <label>Email: <input type="text" name="email"></label><br>
-        <label> Mobile: <input type="text" name="mobile"> </label><br>
-        <textarea name="comments" rows="4">Enter your message</textarea><br>
-        <input type="submit" value="Submit" /><br>
-      </form>
+  <h3>Get In Touch</h3>
+
+  <input type="email" name="email" placeholder="Email Address" style="width:300px; padding:10px;"><br><br>
+
+  <input type="text" name="mobile" placeholder="Mobile Number" style="width:300px; padding:10px;"><br><br>
+
+  <textarea name="comments" rows="5" placeholder="Write your message..." style="width:300px; padding:10px;"></textarea><br><br>
+
+  <input type="submit" value="Send Message" style="background-color:#84e4e2; border:none; padding:10px 20px; cursor:pointer;">
+</form>
     </main>
     <footer class="footer">&copy; Copyright Mr. Camel</footer>
   </div>
